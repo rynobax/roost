@@ -1,0 +1,41 @@
+{
+  "name": "roost-server",
+  "version": "1.0.0",
+  "description": "Server for roost",
+  "main": "build/index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon",
+    "compile": "tsc",
+    "typecheck": "tsc --noEmit -w"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.9",
+    "@types/node": "^11.9.5",
+    "typescript": "^3.3.3333"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "babel-core": "^6.26.3",
+    "jest": "^24.1.0",
+    "lint-staged": "^8.1.4",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "ts-node": "^8.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
